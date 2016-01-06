@@ -1,16 +1,30 @@
 package com.oliver.easy;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.oliver.easy.utils.StringUtils;
+import com.oliver.easy.utils.TextSpanUtils;
+import com.oliver.easy.utils.log.EasyLogHelper;
 
 public class MainActivity extends ActionBarActivity {
+    private static final EasyLogHelper sLogger = EasyLogHelper.getLogger(MainActivity.class.getSimpleName());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String cutString = StringUtils.cutString("year = 2015");
+        sLogger.d("cutString = " + cutString);
+
+        TextView textView = (TextView) findViewById(R.id.text);
+        TextSpanUtils textHighlightUtils = new TextSpanUtils(Color.RED);
+        textHighlightUtils.setPrefixText(textView, "this this this is hight light text", "TH");
     }
 
     @Override
