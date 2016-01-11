@@ -19,6 +19,7 @@ import com.oliver.easy.application.EasyApp;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -27,6 +28,7 @@ import java.net.SocketException;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.TimeZone;
+import java.util.regex.Pattern;
 
 /**
  * Created by wangdong on 16-1-6.
@@ -407,5 +409,27 @@ public class DevicesInfoUtils {
         return userAgent;
     }
 
+    /**
+     * 得到CPU核心数
+     *
+     * @return CPU核心数
+     */
+    public static int getNumCores() {
+        try {
+            File dir = new File("/sys/devices/system/cpu/");
+            File[] files = dir.listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathname) {
+                    if (Pattern.matches("cpu[0-9]", pathname.getName())) {
+                        return true;
+                    }
+                    return false;
+                }
+            });
+            return files.length;
+        } catch (Exception e) {
+            return 1;
+        }
+    }
 
 }
