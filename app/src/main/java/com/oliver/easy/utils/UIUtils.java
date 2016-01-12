@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
 import java.util.List;
 
@@ -114,5 +116,38 @@ public class UIUtils {
         }
         lastClickTime = time;
         return false;
+    }
+
+    public static void setViewLayoutParamsHeight(View view, int height) {
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        layoutParams.height = height;
+        view.setLayoutParams(layoutParams);
+    }
+
+    public static void swapViewGroupChildren(ViewGroup viewGroup, View firstView, View secondView) {
+        int firstIndex = viewGroup.indexOfChild(firstView);
+        int secondIndex = viewGroup.indexOfChild(secondView);
+        if (firstIndex < secondIndex) {
+            viewGroup.removeViewAt(secondIndex);
+            viewGroup.removeViewAt(firstIndex);
+            viewGroup.addView(secondView, firstIndex);
+            viewGroup.addView(firstView, secondIndex);
+        } else {
+            viewGroup.removeViewAt(firstIndex);
+            viewGroup.removeViewAt(secondIndex);
+            viewGroup.addView(firstView, secondIndex);
+            viewGroup.addView(secondView, firstIndex);
+        }
+    }
+
+    public static void postOnPreDraw(final View view, final Runnable runnable) {
+        view.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                view.getViewTreeObserver().removeOnPreDrawListener(this);
+                runnable.run();
+                return true;
+            }
+        });
     }
 }

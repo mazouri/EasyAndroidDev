@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme_Default">
+    </style>
+
+    <style name="Theme_Holo_Dark">
+    </style>
+
+    <style name="Theme_Holo_Wallpaper">
+    </style>
+
+    <style name="Theme_Default_NoActionBar">
+    </style>
+
+    <style name="Theme_Holo_Dark_NoActionBar">
+    </style>
+
+    <style name="Theme_Holo_Wallpaper_NoActionBar">
+    </style>
+</resources>

@@ -47,9 +47,9 @@ public class SharedPrefenrenceHelper {
         editor.commit();
     }
 
-    public static String getShareString(String name) {
+    public static String getShareString(String name, String value) {
         SharedPreferences share = EasyApp.getInstance().getSharedPreferences(SP, Context.MODE_PRIVATE);
-        return share.getString(name, "");
+        return share.getString(name, value);
     }
 
     public static void saveShareString(String name, String value) {
@@ -92,4 +92,29 @@ public class SharedPrefenrenceHelper {
     public static boolean getSavedFirstTimeLaunch() {
         return SharedPrefenrenceHelper.getShareBoolean(SAVED_FIRST_TIME_LAUNCH);
     }
+
+    public static final String KEY_THEME = "key_theme";
+    public static final String DEFAULT_THEME = "default_theme";
+
+    public static void setSavedTheme(String theme) {
+        SharedPrefenrenceHelper.saveShareString(KEY_THEME, theme);
+    }
+
+    public static String getSavedTheme() {
+        return SharedPrefenrenceHelper.getShareString(KEY_THEME, DEFAULT_THEME);
+    }
+
+    public static final String KEY_WALLPAPER_DIM = "key_wallpaper_dim";
+    public static final int DEFAULT_WALLPAPER_DIM = 1;
+    public static final int MAX_WALLPAPER_DIM = 1;
+
+    public static void setSavedWallpaperDim(int wallpaperDim) {
+        SharedPrefenrenceHelper.saveShareInt(KEY_WALLPAPER_DIM, wallpaperDim);
+    }
+
+    public static int getSavedWallpaperDim() {
+        return SharedPrefenrenceHelper.getShareInt(KEY_WALLPAPER_DIM, DEFAULT_WALLPAPER_DIM);
+    }
+
+
 }
