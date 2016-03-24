@@ -1,4 +1,4 @@
-package com.oliver.easy;
+package com.oliver.easy.testpackage;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,9 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.oliver.easy.R;
 import com.oliver.easy.utils.StringUtils;
 import com.oliver.easy.utils.TextSpanUtils;
 import com.oliver.easy.utils.log.EasyLogHelper;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends ActionBarActivity {
     private static final EasyLogHelper sLogger = EasyLogHelper.getLogger(MainActivity.class.getSimpleName());
@@ -18,13 +22,35 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         String cutString = StringUtils.cutString("year = 2015");
         sLogger.d("cutString = " + cutString);
 
         TextView textView = (TextView) findViewById(R.id.text);
         TextSpanUtils textHighlightUtils = new TextSpanUtils(Color.RED);
-        textHighlightUtils.setPrefixText(textView, "this this this is hight light text", "TH");
+        textHighlightUtils.setPrefixText(textView, "I'm MAZOURI! and my name has processed into high light text.", "MAZOURI");
+
+        setupFunc();
+    }
+
+    private void setupFunc() {
+
+    }
+
+    @OnClick(R.id.btn_get_metrics)
+    public void OnGetMetricsClick() {
+        GetMetricsActivity.lunchGetMetricsActivity(this);
+    }
+
+    @OnClick(R.id.btn_memory_status_view)
+    public void onMemViewClick() {
+        MemViewActivity.lunchMemViewActivity(this);
+    }
+
+    @OnClick(R.id.btn_cate_card_view)
+    public void onCateCardClick() {
+        CateCardViewActivity.lunchCateCardViewActivity(this);
     }
 
     @Override
@@ -47,5 +73,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 }

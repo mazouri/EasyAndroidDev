@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MemoryStatusView">
+        <!--title-->
+        <attr name="titleName" format="string"/>
+        <attr name="titleNameColor" format="color"/>
+        <attr name="titleNameSize" format="dimension"/>
+        <attr name="titleNameVisible">
+            <flag name="visible" value="0x00"/>
+            <flag name="gone" value="0x10"/>
+            <flag name="invisible" value="0x20"/>
+        </attr>
+
+        <!--used value-->
+        <attr name="memUsedValue" format="string"/>
+        <attr name="memUsedValueColor" format="color"/>
+        <attr name="memUsedValueSize" format="dimension"/>
+
+        <!--total value-->
+        <attr name="memTotalValue" format="string"/>
+        <attr name="memTotalValueColor" format="color"/>
+        <attr name="memTotalValueSize" format="dimension"/>
+
+        <!--symbol-->
+        <attr name="symbolColor" format="color"/>
+        <attr name="bracketsVisible">
+            <flag name="visible" value="0x00"/>
+            <flag name="gone" value="0x10"/>
+            <flag name="invisible" value="0x20"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CategoryCardView">
+        <attr name="ccvTitle" format="string"/>
+        <attr name="ccvTitleColor" format="color"/>
+        <attr name="ccvTitleSize" format="dimension"/>
+
+        <attr name="ccvCount" format="integer"/>
+        <attr name="ccvCountColor" format="color"/>
+        <attr name="ccvCountSize" format="dimension"/>
+
+        <attr name="ccvIconSource" format="reference"/>
+        <attr name="ccvBackground" format="reference"/>
+    </declare-styleable>
+</resources>

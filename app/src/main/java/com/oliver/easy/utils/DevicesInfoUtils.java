@@ -286,6 +286,14 @@ public class DevicesInfoUtils {
         return density;
     }
 
+    // 屏幕密度Dpi
+    public static float getdensityDpi(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        float densityDpi = dm.densityDpi;
+        return densityDpi;
+    }
+
     // 获取手机型号
     public static String getLocalModel() {
         String model = android.os.Build.MODEL;
