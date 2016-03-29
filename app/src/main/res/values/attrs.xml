@@ -42,4 +42,35 @@
         <attr name="ccvIconSource" format="reference"/>
         <attr name="ccvBackground" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="StorageItemView">
+        <attr name="sivTitle" format="string"/>
+        <attr name="sivTitleColor" format="color"/>
+        <attr name="sivTitleSize" format="dimension"/>
+
+        <attr name="sivMemUsed" format="integer"/>
+        <attr name="sivMemUsedColor" format="color"/>
+        <attr name="sivMemUsedSize" format="dimension"/>
+
+        <attr name="sivMemTotal" format="integer"/>
+        <attr name="sivMemTotalColor" format="color"/>
+        <attr name="sivMemTotalSize" format="dimension"/>
+
+        <attr name="sivIconSource" format="reference"/>
+        <attr name="sivBackground" format="reference"/>
+        <attr name="sivProgress" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="StorageGridLayout">
+        <attr name="sgHorizontalSpacing" format="dimension" />
+        <attr name="sgVerticalSpacing" format="dimension" />
+        <attr name="sgItemWidth" format="dimension" />
+        <attr name="sgItemHeight" format="dimension" />
+
+        <attr name="sgItemTitleColor" format="color"/>
+        <attr name="sgItemTitleSize" format="dimension"/>
+
+        <attr name="sgItemMemColor" format="color"/>
+        <attr name="sgItemMemSize" format="dimension"/>
+    </declare-styleable>
 </resources>

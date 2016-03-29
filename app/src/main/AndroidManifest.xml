@@ -31,6 +31,10 @@
             android:name=".testpackage.MemViewActivity"
             android:label="@string/title_activity_mem_view" >
         </activity>
+        <activity
+            android:name=".testpackage.StorageGridLayoutActivity"
+            android:label="@string/title_activity_storage_grid_layout" >
+        </activity>
     </application>
 
 </manifest>

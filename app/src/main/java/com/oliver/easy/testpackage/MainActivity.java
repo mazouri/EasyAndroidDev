@@ -53,6 +53,11 @@ public class MainActivity extends ActionBarActivity {
         CateCardViewActivity.lunchCateCardViewActivity(this);
     }
 
+    @OnClick(R.id.btn_storage_grid_layout)
+    public void onStorageGridClick() {
+        StorageGridLayoutActivity.lunchStorageGridLayoutActivity(this);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

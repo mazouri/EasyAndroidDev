@@ -39,5 +39,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CategoryCardView"/>
+
+        <Button
+            android:id="@+id/btn_storage_grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="StorageGridLayout"/>
     </LinearLayout>
 </RelativeLayout>

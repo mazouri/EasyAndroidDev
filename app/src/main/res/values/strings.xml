@@ -4,4 +4,5 @@
     <string name="title_activity_get_metrics">GetMetricsActivity</string>
     <string name="title_activity_cate_card_view">CateCardViewActivity</string>
     <string name="title_activity_mem_view">MemViewActivity</string>
+    <string name="title_activity_storage_grid_layout">StorageGridLayoutActivity</string>
 </resources>
